@@ -30,7 +30,7 @@ body {
     position: absolute;
     top: 30%; /* Ajuste a posição vertical do texto */
     left: 10%; /* Ajuste a posição horizontal do texto */
-    color: #fff;
+    color: #343333;
 }
 
 h1 {
@@ -68,20 +68,20 @@ h2 {
 .online-portfolio {
     font-family: 'Open Sauce', sans-serif;
     font-size: 20px;
-    color: #333;
+    color: #343333;
 }
 
 .linha {
     flex-grow: 1;
     height: 2px;
-    background-color: #e0e0e0;
+    background-color: #343333;
     margin: 0 20px;
 }
 
 .ano {
     font-family: 'Open Sauce', sans-serif;
     font-size: 20px;
-    color: #333;
+    color: #343333;
 }
 
 /* Outras imagens */
