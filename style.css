@@ -11,12 +11,52 @@ body {
     overflow-x: hidden;
 }
 
+/* Imagem do topo */
+.imagem-topo {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Cobrir toda a altura da tela */
+    overflow: hidden;
+}
+
+.imagem-topo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que a imagem cubra a área */
+    opacity: 0.5; /* Transparência de 70% */
+}
+
+.titulo {
+    position: absolute;
+    top: 30%; /* Ajuste a posição vertical do texto */
+    left: 10%; /* Ajuste a posição horizontal do texto */
+    color: #333;
+}
+
+h1 {
+    font-size: 102px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+h2 {
+    font-size: 36px;
+    font-weight: normal;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+}
+
 /* Topo da página */
 .topo {
+    position: absolute; /* Posiciona o topo sobre a imagem */
+    top: 20px; /* Distância do topo da página */
+    left: 0;
+    right: 0;
     display: flex;
     align-items: center;
-    padding: 20px;
-    position: relative;
+    padding: 0 20px;
+    z-index: 10; /* Garante que o topo fique acima da imagem */
 }
 
 .retangulo {
@@ -44,35 +84,9 @@ body {
     color: #333;
 }
 
-/* Conteúdo principal */
-main {
-    position: relative;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start; /* Alinhar à esquerda */
-    background-image: url('assets/images/5.png');
-    background-size: cover;
-    background-position: center;
-    opacity: 0.7; /* Transparência de 70% */
-    padding-left: 10%; /* Espaçamento à esquerda */
-}
-
-.titulo {
-    text-align: left; /* Alinhar texto à esquerda */
-    color: #333;
-}
-
-h1 {
-    font-size: 102px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    letter-spacing: 2px; /* Espaçamento entre letras */
-}
-
-h2 {
-    font-size: 36px;
-    font-weight: normal;
-    letter-spacing: 8px; /* Aumentar espaçamento entre letras */
-    text-transform: uppercase; /* Garantir que o texto fique em maiúsculas */
+/* Outras imagens */
+.outras-imagens img {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px; /* Espaçamento entre as imagens */
 }
