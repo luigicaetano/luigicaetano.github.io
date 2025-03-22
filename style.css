@@ -102,9 +102,9 @@ h2 {
 }
 
 .fotoluisa img {
-    width: 450px; /* Aumentando o tamanho da imagem em 1,5x (de 300px para 450px) */
+    width: 380px; /* Aumentando o tamanho da imagem em 1,5x (de 300px para 450px) */
     height: auto;
-    border-radius: 8px; /* Bordas arredondadas */
+    border-radius: 14px; /* Bordas arredondadas */
     margin-right: 30px; /* Espaçamento à direita da imagem */
 }
 
