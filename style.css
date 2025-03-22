@@ -99,38 +99,42 @@ h2 {
     background-size: cover; /* Garante que a imagem de fundo cubra toda a área */
     background-position: center;
     padding: 60px 20px; /* Espaçamento interno */
+    position: relative; /* Necessário para posicionar o texto sobre a imagem */
 }
 
 .fotoluisa img {
-    width: 450px; /* Tamanho da imagem em desktop */
+    width: 450px; /* Tamanho da imagem */
     height: auto;
-    border-radius: 8px; /* Bordas arredondadas */
-    margin-right: 30px; /* Espaçamento à direita da imagem */
+    border-radius: 8px;
+    margin-right: 30px;
 }
 
 .texto h3 {
     font-family: 'Gotham', sans-serif;
-    font-size: 61.1px; /* Tamanho do texto */
-    color: #343333; /* Cor do texto */
+    font-size: 61.1px;
+    color: #343333;
     text-transform: uppercase;
     font-weight: bold;
-    align-self: flex-start; /* Alinha o texto ao topo da imagem */
+    align-self: flex-start;
 }
 
-/* Texto sobre a Luisa */
+/* Novo texto "Sobre a Luisa" */
 .sobre-luisa {
     font-family: 'Gotham', sans-serif;
     font-size: 16px; /* Tamanho do texto */
     color: #343333; /* Cor do texto */
-    line-height: 1.5; /* Espaçamento entre linhas */
-    padding: 20px 15px; /* Espaçamento interno */
-    max-width: 800px; /* Limita a largura máxima */
-    margin: 0 auto; /* Centraliza o texto */
+    line-height: 1.5;
+    padding: 20px 15px;
+    max-width: 800px;
+    margin: 30px auto 0; /* Distância do topo e centralização */
+    background-color: rgba(255, 255, 255, 0.8); /* Fundo semitransparente para o texto ficar legível */
+    border-radius: 8px; /* Bordas arredondadas */
 }
 
 .sobre-luisa p {
     margin-bottom: 15px; /* Espaçamento entre os parágrafos */
 }
+
 
 
 @media (max-width: 768px) {
@@ -150,6 +154,10 @@ h2 {
         font-size: 40px; /* Reduz o tamanho do texto em dispositivos móveis */
         text-align: center; /* Centraliza o texto */
         margin-top: 20px; /* Espaçamento superior */
+    }
+    /* Ajusta o padding para dispositivos móveis */
+    .sobre-luisa {
+        padding: 15px 10px;
     }
 }
 
