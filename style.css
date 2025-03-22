@@ -50,15 +50,16 @@ main {
     height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start; /* Alinhar à esquerda */
     background-image: url('assets/images/5.png');
     background-size: cover;
     background-position: center;
     opacity: 0.7; /* Transparência de 70% */
+    padding-left: 10%; /* Espaçamento à esquerda */
 }
 
 .titulo {
-    text-align: center;
+    text-align: left; /* Alinhar texto à esquerda */
     color: #333;
 }
 
@@ -66,26 +67,12 @@ h1 {
     font-size: 102px;
     font-weight: bold;
     margin-bottom: 20px;
+    letter-spacing: 2px; /* Espaçamento entre letras */
 }
 
 h2 {
     font-size: 36px;
     font-weight: normal;
-}
-
-@font-face {
-    font-family: 'Open Sauce';
-    src: url('assets/fonts/OpenSauce-Regular.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'Gotham';
-    src: url('assets/fonts/Gotham-Bold.ttf') format('truetype');
-    font-weight: bold;
-}
-
-@font-face {
-    font-family: 'Gotham';
-    src: url('assets/fonts/Gotham-Medium.ttf') format('truetype');
-    font-weight: normal;
+    letter-spacing: 8px; /* Aumentar espaçamento entre letras */
+    text-transform: uppercase; /* Garantir que o texto fique em maiúsculas */
 }
