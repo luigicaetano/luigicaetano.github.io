@@ -11,7 +11,7 @@
 </head>
 <body>
     <!-- Imagem do topo -->
-    <div class="imagem-topo">
+    <div class="imagem-topo" id="inicio">
         <img src="assets/images/5.png" alt="Imagem de fundo">
         <div class="titulo">
             <h1>LUISA BAPTISTA</h1>
@@ -28,24 +28,252 @@
         <span class="ano">2025</span>
     </div>
 
+    <!-- Menu de navegação -->
+    <nav class="menu">
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul>
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#quem-sou">Quem sou</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#projetos">Projetos</a></li>
+            <li><a href="#depoimentos">Depoimentos</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </nav>
+
     <!-- Seção Quem Sou Eu -->
-    <div class="quem-sou-eu">
+    <section class="quem-sou-eu" id="quem-sou">
         <div class="fotoluisa">
             <img src="assets/images/fotoluisa.jpg" alt="Foto da Luisa">
         </div>
         <div class="texto">
             <h3>Quem sou eu?</h3>
-            <h4><p>Prazer, sou a Luisa, mineira, casada e mãe de pet</p>
+            <h4>
+                <p>Prazer, sou a Luisa, mineira, casada e mãe de pet</p>
                 <br>
                 <p>Me formei em Design de Ambientes pela UEMG e meu maior hobby é ilustração.</p>
                 <br>
-            <p>O que mais amo no meu trabalho é poder transformar espaços em lugares, cheios de significado e refletindo a identidade de quem usa ali</p>
-            <br>
-            <p>Espero poder te ajudar a se sentir em casa, onde quer que seja!</p></h4>
+                <p>O que mais amo no meu trabalho é poder transformar espaços em lugares, cheios de significado e refletindo a identidade de quem usa ali</p>
+                <br>
+                <p>Espero poder te ajudar a se sentir em casa, onde quer que seja!</p>
+            </h4>
         </div>
-    </div>
+        <div class="imagem-direita">
+            <img src="assets/images/imagem1.png" alt="Imagem do lado direito">
+        </div>
+    </section>
 
-    <!-- Texto sobre a Luisa -->
-    
+    <!-- Seção de Serviços -->
+    <section class="servicos" id="servicos">
+        <div class="container">
+            <h3>Serviços</h3>
+            <div class="servicos-grid">
+                <div class="servico">
+                    <div class="servico-icone">
+                        <img src="assets/images/icone-projeto.png" alt="Ícone de Projeto">
+                    </div>
+                    <h4>Projeto Completo</h4>
+                    <p>Desde o levantamento inicial até a entrega final, cuidando de cada detalhe para transformar seu espaço.</p>
+                </div>
+                <div class="servico">
+                    <div class="servico-icone">
+                        <img src="assets/images/icone-consultoria.png" alt="Ícone de Consultoria">
+                    </div>
+                    <h4>Consultoria</h4>
+                    <p>Orientação profissional para você implementar as mudanças no seu próprio ritmo e orçamento.</p>
+                </div>
+                <div class="servico">
+                    <div class="servico-icone">
+                        <img src="assets/images/icone-3d.png" alt="Ícone de Renderização 3D">
+                    </div>
+                    <h4>Renderização 3D</h4>
+                    <p>Visualize seu espaço antes mesmo de iniciar a reforma com imagens realistas em 3D.</p>
+                </div>
+                <div class="servico">
+                    <div class="servico-icone">
+                        <img src="assets/images/icone-execucao.png" alt="Ícone de Execução">
+                    </div>
+                    <h4>Acompanhamento de Obra</h4>
+                    <p>Supervisão da execução para garantir que o projeto seja implementado conforme planejado.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Projetos -->
+    <section class="projetos" id="projetos">
+        <div class="container">
+            <h3>Projetos</h3>
+            <div class="filtros">
+                <button class="filtro-btn ativo" data-filtro="todos">Todos</button>
+                <button class="filtro-btn" data-filtro="residencial">Residencial</button>
+                <button class="filtro-btn" data-filtro="comercial">Comercial</button>
+                <button class="filtro-btn" data-filtro="corporativo">Corporativo</button>
+            </div>
+            <div class="projetos-grid">
+                <div class="projeto" data-categoria="residencial">
+                    <img src="assets/images/projeto1.jpg" alt="Projeto Residencial">
+                    <div class="overlay">
+                        <h4>Casa Moderna</h4>
+                        <p>Projeto residencial com ambientes integrados</p>
+                        <a href="#" class="ver-mais">Ver mais</a>
+                    </div>
+                </div>
+                <div class="projeto" data-categoria="comercial">
+                    <img src="assets/images/projeto2.jpg" alt="Projeto Comercial">
+                    <div class="overlay">
+                        <h4>Café Aconchegante</h4>
+                        <p>Design para cafeteria no centro da cidade</p>
+                        <a href="#" class="ver-mais">Ver mais</a>
+                    </div>
+                </div>
+                <div class="projeto" data-categoria="residencial">
+                    <img src="assets/images/projeto3.jpg" alt="Projeto Residencial">
+                    <div class="overlay">
+                        <h4>Apartamento Minimalista</h4>
+                        <p>Projeto de interiores para apartamento compacto</p>
+                        <a href="#" class="ver-mais">Ver mais</a>
+                    </div>
+                </div>
+                <div class="projeto" data-categoria="corporativo">
+                    <img src="assets/images/projeto4.jpg" alt="Projeto Corporativo">
+                    <div class="overlay">
+                        <h4>Escritório Moderno</h4>
+                        <p>Ambiente de trabalho colaborativo e produtivo</p>
+                        <a href="#" class="ver-mais">Ver mais</a>
+                    </div>
+                </div>
+                <div class="projeto" data-categoria="comercial">
+                    <img src="assets/images/projeto5.jpg" alt="Projeto Comercial">
+                    <div class="overlay">
+                        <h4>Loja Conceito</h4>
+                        <p>Design de interiores para loja de moda</p>
+                        <a href="#" class="ver-mais">Ver mais</a>
+                    </div>
+                </div>
+                <div class="projeto" data-categoria="residencial">
+                    <img src="assets/images/projeto6.jpg" alt="Projeto Residencial">
+                    <div class="overlay">
+                        <h4>Área Gourmet</h4>
+                        <p>Espaço de lazer e gastronomia para residência</p>
+                        <a href="#" class="ver-mais">Ver mais</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Depoimentos -->
+    <section class="depoimentos" id="depoimentos">
+        <div class="container">
+            <h3>Depoimentos</h3>
+            <div class="depoimentos-slider">
+                <div class="depoimento">
+                    <div class="depoimento-texto">
+                        <p>"A Luisa transformou completamente nosso apartamento! Ela entendeu exatamente o que queríamos e criou um espaço que reflete nossa personalidade. Superou todas as nossas expectativas."</p>
+                    </div>
+                    <div class="depoimento-autor">
+                        <p><strong>Maria e João</strong> - Projeto Residencial</p>
+                    </div>
+                </div>
+                <div class="depoimento">
+                    <div class="depoimento-texto">
+                        <p>"Contratar a Luisa para o projeto da nossa cafeteria foi a melhor decisão que tomamos. O espaço ficou aconchegante e funcional, exatamente como precisávamos."</p>
+                    </div>
+                    <div class="depoimento-autor">
+                        <p><strong>Carlos Silva</strong> - Café Central</p>
+                    </div>
+                </div>
+                <div class="depoimento">
+                    <div class="depoimento-texto">
+                        <p>"Profissional extremamente dedicada e criativa. A Luisa conseguiu otimizar cada centímetro do nosso apartamento pequeno, criando soluções inteligentes que nem imaginávamos ser possíveis."</p>
+                    </div>
+                    <div class="depoimento-autor">
+                        <p><strong>Ana Paula</strong> - Projeto Residencial</p>
+                    </div>
+                </div>
+            </div>
+            <div class="depoimentos-nav">
+                <button class="depoimento-anterior">&lt;</button>
+                <button class="depoimento-proximo">&gt;</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Contato -->
+    <section class="contato" id="contato">
+        <div class="container">
+            <h3>Entre em Contato</h3>
+            <div class="contato-conteudo">
+                <div class="contato-info">
+                    <div class="info-item">
+                        <h4>Email</h4>
+                        <p>luisa@designdeambientes.com</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Telefone</h4>
+                        <p>(31) 99999-9999</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Localização</h4>
+                        <p>Belo Horizonte, MG</p>
+                    </div>
+                    <div class="social-media">
+                        <a href="#" class="social-icon">Instagram</a>
+                        <a href="#" class="social-icon">Pinterest</a>
+                        <a href="#" class="social-icon">Behance</a>
+                    </div>
+                </div>
+                <form class="contato-form" id="contato-form">
+                    <div class="form-group">
+                        <label for="nome">Nome</label>
+                        <input type="text" id="nome" name="nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="assunto">Assunto</label>
+                        <input type="text" id="assunto" name="assunto" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensagem">Mensagem</label>
+                        <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Enviar Mensagem</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>LUISA BAPTISTA</h3>
+                    <p>Designer de Interiores</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#inicio">Início</a>
+                    <a href="#quem-sou">Quem sou</a>
+                    <a href="#servicos">Serviços</a>
+                    <a href="#projetos">Projetos</a>
+                    <a href="#contato">Contato</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Luisa Baptista - Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>
