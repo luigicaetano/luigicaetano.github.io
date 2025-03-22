@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Gotham', sans-serif;
-    background-color: #f9f9f9;
+    background-color: #343333;
     overflow-x: hidden;
 }
 
@@ -23,18 +23,18 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover; /* Garante que a imagem cubra a área */
-    opacity: 0.55; /* Um pouco mais visível */
+    opacity: 0.55; /* Transparência de 55% */
 }
 
 .titulo {
     position: absolute;
     top: 30%; /* Ajuste a posição vertical do texto */
     left: 10%; /* Ajuste a posição horizontal do texto */
-    color: #343333;
+    color: #333;
 }
 
 h1 {
-    font-size: 80px;
+    font-size: 102px;
     font-weight: bold;
     margin-bottom: 20px;
     letter-spacing: 2px;
@@ -43,7 +43,7 @@ h1 {
 h2 {
     font-size: 36px;
     font-weight: normal;
-    letter-spacing: 12px; /* Aumenta o espaçamento das letras */
+    letter-spacing: 8px;
     text-transform: uppercase;
 }
 
@@ -68,7 +68,7 @@ h2 {
 .online-portfolio {
     font-family: 'Open Sauce', sans-serif;
     font-size: 20px;
-    color: #343333;
+    color: #333;
 }
 
 .linha {
@@ -81,27 +81,17 @@ h2 {
 .ano {
     font-family: 'Open Sauce', sans-serif;
     font-size: 20px;
-    color: #343333;
-}
-
-/* Outras imagens */
-.outras-imagens img {
-    width: 100%;
-    display: block;
-    margin-bottom: 20px; /* Espaçamento entre as imagens */
+    color: #333;
 }
 
 /* Seção Quem Sou Eu */
 .quem-sou-eu {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    align-items: flex-start;
     background-image: url('assets/images/fundo1.png');
     background-size: cover;
     background-position: center;
     padding: 60px 20px;
-    position: relative; /* Necessário para que o texto fique sobre a imagem */
-    min-height: 500px; /* Garantir uma altura mínima para a seção */
 }
 
 /* Ajuste da imagem */
@@ -110,67 +100,33 @@ h2 {
     border-radius: 8px;
 }
 
-/* Texto "Quem sou eu?" */
 .texto h3 {
     font-family: 'Gotham', sans-serif;
     font-size: 61.1px;
     color: #343333;
-    text-transform: uppercase;
     font-weight: bold;
 }
 
-/* Texto sobre a Luisa (sobre a imagem fundo1) */
-.sobre-luisa {
+.texto h4 {
     font-family: 'Gotham', sans-serif;
     font-size: 16px;
     color: #343333;
-    line-height: 1.5;
-    padding: 20px 15px;
-    max-width: 800px;
-    margin: 0 auto;
-    background-color: rgba(255, 255, 255, 0.8); /* Fundo semitransparente */
-    border-radius: 8px;
-    position: absolute;
-    top: 70%; /* Posiciona o texto sobre a imagem */
-    left: 50%;
-    transform: translateX(-50%); /* Centraliza o texto */
-    padding-bottom: 30px; /* Garantir espaço extra no final */
-}
-
-.sobre-luisa p {
-    margin-bottom: 15px;
 }
 
 
-
-
+/* Media Query para dispositivos móveis */
 @media (max-width: 768px) {
-    /* Altera o layout para uma coluna ao invés de duas */
+    /* Ajustes em dispositivos móveis */
     .quem-sou-eu {
-        flex-direction: column; /* Alinha a imagem e o texto verticalmente */
-        padding: 30px 10px; /* Ajusta o padding */
+        flex-direction: column; /* Muda para layout vertical em telas menores */
     }
 
     .fotoluisa img {
-        width: 80%; /* Ajusta a largura da imagem para caber na tela */
-        margin-right: 0; /* Remove o espaço à direita da imagem */
-        margin-bottom: 20px; /* Adiciona um espaçamento abaixo da imagem */
+        width: 60%; /* Ajusta a largura da imagem em dispositivos móveis */
+        margin-bottom: 20px;
     }
 
-    .texto h3 {
-        font-size: 40px; /* Reduz o tamanho do texto em dispositivos móveis */
-        text-align: center; /* Centraliza o texto */
-        margin-top: 20px; /* Espaçamento superior */
-    }
-    /* Ajusta o padding para dispositivos móveis */
     .sobre-luisa {
-        padding: 15px 10px;
-    }
-}
-
-/* Media Query para telas muito pequenas (ex: smartphones antigos) */
-@media (max-width: 480px) {
-    .textos h3 {
-        font-size: 32px; /* Tamanho ainda menor para telas pequenas */
+        padding: 15px 10px; /* Ajusta o padding em telas menores */
     }
 }
