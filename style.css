@@ -94,46 +94,53 @@ h2 {
 /* Seção Quem Sou Eu */
 .quem-sou-eu {
     display: flex;
-    align-items: flex-start; /* Alinha os itens ao topo */
-    background-image: url('assets/images/fundo1.png'); /* Imagem de fundo */
-    background-size: cover; /* Garante que a imagem de fundo cubra toda a área */
+    align-items: center;
+    justify-content: space-between;
+    background-image: url('assets/images/fundo1.png');
+    background-size: cover;
     background-position: center;
-    padding: 60px 20px; /* Espaçamento interno */
-    position: relative; /* Necessário para posicionar o texto sobre a imagem */
+    padding: 60px 20px;
+    position: relative; /* Necessário para que o texto fique sobre a imagem */
+    min-height: 500px; /* Garantir uma altura mínima para a seção */
 }
 
+/* Ajuste da imagem */
 .fotoluisa img {
-    width: 450px; /* Tamanho da imagem */
-    height: auto;
+    width: 30%; /* Ajusta a largura da imagem */
     border-radius: 8px;
-    margin-right: 30px;
 }
 
+/* Texto "Quem sou eu?" */
 .texto h3 {
     font-family: 'Gotham', sans-serif;
     font-size: 61.1px;
     color: #343333;
     text-transform: uppercase;
     font-weight: bold;
-    align-self: flex-start;
 }
 
-/* Novo texto "Sobre a Luisa" */
+/* Texto sobre a Luisa (sobre a imagem fundo1) */
 .sobre-luisa {
     font-family: 'Gotham', sans-serif;
-    font-size: 16px; /* Tamanho do texto */
-    color: #343333; /* Cor do texto */
+    font-size: 16px;
+    color: #343333;
     line-height: 1.5;
     padding: 20px 15px;
     max-width: 800px;
-    margin: 30px auto 0; /* Distância do topo e centralização */
-    background-color: rgba(255, 255, 255, 0.8); /* Fundo semitransparente para o texto ficar legível */
-    border-radius: 8px; /* Bordas arredondadas */
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.8); /* Fundo semitransparente */
+    border-radius: 8px;
+    position: absolute;
+    top: 70%; /* Posiciona o texto sobre a imagem */
+    left: 50%;
+    transform: translateX(-50%); /* Centraliza o texto */
+    padding-bottom: 30px; /* Garantir espaço extra no final */
 }
 
 .sobre-luisa p {
-    margin-bottom: 15px; /* Espaçamento entre os parágrafos */
+    margin-bottom: 15px;
 }
+
 
 
 
