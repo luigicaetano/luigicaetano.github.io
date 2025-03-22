@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function() {
              const formData = new FormData(this);
              
              // Enviar o formulário usando fetch
-             fetch('https://formsubmit.co/seu-email@exemplo.com', {
+             fetch('https://formsubmit.co/luisabaptistadesign@gmail.com', {
                  method: 'POST',
                  body: formData,
                  headers: {
