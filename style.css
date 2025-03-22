@@ -6,119 +6,86 @@
 }
 
 body {
-    font-family: 'Inter', sans-serif;
-    line-height: 1.6;
-    color: #333;
+    font-family: 'Gotham', sans-serif;
     background-color: #f9f9f9;
+    overflow-x: hidden;
 }
 
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px 0;
+/* Topo da página */
+.topo {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    position: relative;
 }
 
-/* Header */
-header {
-    background-color: #333;
-    color: #fff;
+.retangulo {
+    background-color: #e0e0e0;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.online-portfolio {
+    font-family: 'Open Sauce', sans-serif;
+    font-size: 20px;
+    color: #333;
+}
+
+.linha {
+    flex-grow: 1;
+    height: 2px;
+    background-color: #e0e0e0;
+    margin: 0 20px;
+}
+
+.ano {
+    font-family: 'Open Sauce', sans-serif;
+    font-size: 20px;
+    color: #333;
+}
+
+/* Conteúdo principal */
+main {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('assets/images/5.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.7; /* Transparência de 70% */
+}
+
+.titulo {
     text-align: center;
-    padding: 60px 0;
+    color: #333;
 }
 
-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-}
-
-header p {
-    font-size: 1.2rem;
-    color: #ccc;
-}
-
-/* Seções */
-section {
-    padding: 60px 0;
+h1 {
+    font-size: 102px;
+    font-weight: bold;
+    margin-bottom: 20px;
 }
 
 h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    text-align: center;
+    font-size: 36px;
+    font-weight: normal;
 }
 
-p {
-    font-size: 1.1rem;
-    margin-bottom: 20px;
-    text-align: center;
+@font-face {
+    font-family: 'Open Sauce';
+    src: url('assets/fonts/OpenSauce-Regular.ttf') format('truetype');
 }
 
-/* Portfólio */
-.projetos {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    flex-wrap: wrap;
+@font-face {
+    font-family: 'Gotham';
+    src: url('assets/fonts/Gotham-Bold.ttf') format('truetype');
+    font-weight: bold;
 }
 
-.projeto {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-    flex: 1 1 calc(33.333% - 40px);
-    text-align: center;
-    padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.projeto img {
-    max-width: 100%;
-    border-radius: 8px;
-    margin-bottom: 15px;
-}
-
-.projeto h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-}
-
-.projeto p {
-    font-size: 1rem;
-    color: #666;
-}
-
-/* Contato */
-#contato {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-}
-
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #007BFF;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.btn:hover {
-    background-color: #0056b3;
-}
-
-/* Footer */
-footer {
-    background-color: #222;
-    color: #ccc;
-    text-align: center;
-    padding: 20px 0;
-}
-
-footer p {
-    margin: 0;
-    font-size: 0.9rem;
+@font-face {
+    font-family: 'Gotham';
+    src: url('assets/fonts/Gotham-Medium.ttf') format('truetype');
+    font-weight: normal;
 }
