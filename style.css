@@ -90,3 +90,29 @@ h2 {
     display: block;
     margin-bottom: 20px; /* Espaçamento entre as imagens */
 }
+
+/* Seção Quem Sou Eu */
+.quem-sou-eu {
+    display: flex;
+    align-items: flex-start; /* Alinha os itens ao topo */
+    background-image: url('assets/images/fundo1.png'); /* Imagem de fundo */
+    background-size: cover; /* Garante que a imagem de fundo cubra toda a área */
+    background-position: center;
+    padding: 60px 20px; /* Espaçamento interno */
+}
+
+.fotoluisa img {
+    width: 300px; /* Tamanho da imagem fotoluisa */
+    height: auto;
+    border-radius: 8px; /* Bordas arredondadas */
+    margin-right: 30px; /* Espaçamento à direita da imagem */
+}
+
+.texto h3 {
+    font-family: 'Gotham', sans-serif;
+    font-size: 61.1px; /* Tamanho do texto */
+    color: #fff; /* Cor do texto */
+    text-transform: uppercase;
+    font-weight: bold;
+    align-self: flex-start; /* Alinha o texto ao topo da imagem */
+}
