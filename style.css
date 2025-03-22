@@ -102,17 +102,44 @@ h2 {
 }
 
 .fotoluisa img {
-    width: 380px; /* Aumentando o tamanho da imagem em 1,5x (de 300px para 450px) */
+    width: 450px; /* Tamanho da imagem em desktop */
     height: auto;
-    border-radius: 14px; /* Bordas arredondadas */
+    border-radius: 8px; /* Bordas arredondadas */
     margin-right: 30px; /* Espaçamento à direita da imagem */
 }
 
 .texto h3 {
     font-family: 'Gotham', sans-serif;
     font-size: 61.1px; /* Tamanho do texto */
-    color: #343333; /* Cor do texto ajustada para #343333 */
+    color: #343333; /* Cor do texto */
     text-transform: uppercase;
     font-weight: bold;
     align-self: flex-start; /* Alinha o texto ao topo da imagem */
+}
+
+@media (max-width: 768px) {
+    /* Altera o layout para uma coluna ao invés de duas */
+    .quem-sou-eu {
+        flex-direction: column; /* Alinha a imagem e o texto verticalmente */
+        padding: 30px 10px; /* Ajusta o padding */
+    }
+
+    .fotoluisa img {
+        width: 80%; /* Ajusta a largura da imagem para caber na tela */
+        margin-right: 0; /* Remove o espaço à direita da imagem */
+        margin-bottom: 20px; /* Adiciona um espaçamento abaixo da imagem */
+    }
+
+    .texto h3 {
+        font-size: 40px; /* Reduz o tamanho do texto em dispositivos móveis */
+        text-align: center; /* Centraliza o texto */
+        margin-top: 20px; /* Espaçamento superior */
+    }
+}
+
+/* Media Query para telas muito pequenas (ex: smartphones antigos) */
+@media (max-width: 480px) {
+    .textos h3 {
+        font-size: 32px; /* Tamanho ainda menor para telas pequenas */
+    }
 }
