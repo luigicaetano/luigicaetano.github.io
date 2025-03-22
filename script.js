@@ -112,30 +112,52 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 5000);
     }
     
-    // Formulário de contato
-    const contatoForm = document.getElementById('contato-form');
-    if (contatoForm) {
-        contatoForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Aqui você pode adicionar o código para enviar o formulário por email
-            // Por enquanto, vamos apenas mostrar uma mensagem de sucesso
-            
-            // Simulando o envio com um pequeno delay
-            const submitBtn = this.querySelector('.submit-btn');
-            const originalText = submitBtn.textContent;
-            
-            submitBtn.textContent = 'Enviando...';
-            submitBtn.disabled = true;
-            
-            setTimeout(() => {
-                alert('Mensagem enviada com sucesso! Obrigado pelo contato.');
-                contatoForm.reset();
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-            }, 1500);
-        });
-    }
+     // Formulário de contato com envio de email usando FormSubmit
+     const contatoForm = document.getElementById('contato-form');
+     if (contatoForm) {
+         contatoForm.addEventListener('submit', function(e) {
+             e.preventDefault();
+             
+             // Mostrar indicador de carregamento
+             const submitBtn = this.querySelector('.submit-btn');
+             const originalText = submitBtn.textContent;
+             submitBtn.textContent = 'Enviando...';
+             submitBtn.disabled = true;
+             
+             // Criar os dados do formulário
+             const formData = new FormData(this);
+             
+             // Enviar o formulário usando fetch
+             fetch('https://formsubmit.co/seu-email@exemplo.com', {
+                 method: 'POST',
+                 body: formData,
+                 headers: {
+                     'Accept': 'application/json'
+                 }
+             })
+             .then(response => {
+                 if (response.ok) {
+                     return response.json();
+                 }
+                 throw new Error('Erro ao enviar o formulário. Por favor, tente novamente mais tarde.');
+             })
+             .then(data => {
+                 // Mensagem de sucesso
+                 alert('Mensagem enviada com sucesso! Obrigado pelo contato.');
+                 contatoForm.reset();
+             })
+             .catch(error => {
+                 // Mensagem de erro
+                 alert(error.message);
+             })
+             .finally(() => {
+                 // Restaurar o botão
+                 submitBtn.textContent = originalText;
+                 submitBtn.disabled = false;
+             });
+         });
+     }
+ }
     
     // Detecção de posição de rolagem para animação do menu
     window.addEventListener('scroll', function() {
