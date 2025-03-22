@@ -117,6 +117,22 @@ h2 {
     align-self: flex-start; /* Alinha o texto ao topo da imagem */
 }
 
+/* Texto sobre a Luisa */
+.sobre-luisa {
+    font-family: 'Gotham', sans-serif;
+    font-size: 16px; /* Tamanho do texto */
+    color: #343333; /* Cor do texto */
+    line-height: 1.5; /* Espaçamento entre linhas */
+    padding: 20px 15px; /* Espaçamento interno */
+    max-width: 800px; /* Limita a largura máxima */
+    margin: 0 auto; /* Centraliza o texto */
+}
+
+.sobre-luisa p {
+    margin-bottom: 15px; /* Espaçamento entre os parágrafos */
+}
+
+
 @media (max-width: 768px) {
     /* Altera o layout para uma coluna ao invés de duas */
     .quem-sou-eu {
