@@ -125,12 +125,21 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Verificar se estamos em uma página de projeto
-    // Podemos verificar se existe algum elemento específico das páginas de projeto
-    const isPaginaProjeto = document.querySelector('.projeto-galeria') !== null;
+    // Método mais robusto para verificar se estamos na página index ou em uma página de projeto
+    // Verificamos o caminho da URL atual
+    const caminhoAtual = window.location.pathname;
     
-    // Só executar o código do popup se estivermos em uma página de projeto
-    if (isPaginaProjeto) {
+    // A página index geralmente é "/" ou "/index.html"
+    const isPaginaIndex = caminhoAtual === '/' || 
+                          caminhoAtual === '/index.html' || 
+                          caminhoAtual.endsWith('/index.html') ||
+                          caminhoAtual === '' ||
+                          caminhoAtual.split('/').pop() === '';
+    
+    // Só executar o código do popup se NÃO estivermos na página index
+    if (!isPaginaIndex) {
+        console.log('Não estamos na página index, ativando pop-up de imagens');
+        
         // 1. Primeiro, vamos criar o elemento de pop-up e adicioná-lo ao body
         const popupOverlay = document.createElement('div');
         popupOverlay.className = 'popup-overlay';
@@ -164,12 +173,16 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
-        // 5. Encontrar todas as imagens que devem ser clicáveis
-        // Nas páginas de projetos, as imagens estão na galeria
-        const galeriaImagens = document.querySelectorAll('.galeria-item img');
+        // 5. Encontrar todas as imagens clicáveis nas páginas de projeto
+        const todasImagensProjeto = document.querySelectorAll('.galeria-item img, .projeto-detalhes img, .projeto-descricao img, .projeto-galeria img');
         
         // Função para abrir o popup com a imagem clicada
         function abrirPopupImagem(e) {
+            // Evitar que imagens com links para outras páginas abram o popup
+            if (e.target.closest('a') && !e.target.closest('a').classList.contains('imagem-clicavel')) {
+                return;
+            }
+            
             // Obter URL da imagem clicada
             const imagemSrc = e.target.getAttribute('src');
             // Definir a imagem no popup
@@ -180,19 +193,25 @@ document.addEventListener('DOMContentLoaded', function() {
             document.body.style.overflow = 'hidden';
         }
         
-        // Adicionar evento de clique para todas as imagens da galeria de projetos
-        galeriaImagens.forEach(img => {
+        // Adicionar evento de clique para todas as imagens relevantes
+        todasImagensProjeto.forEach(img => {
             img.addEventListener('click', abrirPopupImagem);
             // Adicionar cursor pointer para indicar que é clicável
             img.style.cursor = 'pointer';
         });
+    } else {
+        console.log('Estamos na página index, pop-up de imagens desativado');
         
-        // Também podemos incluir outras imagens relevantes dentro das páginas de projeto
-        // Por exemplo, imagens na seção de detalhes do projeto
-        const outrasImagensProjeto = document.querySelectorAll('.projeto-detalhes img, .projeto-descricao img');
-        outrasImagensProjeto.forEach(img => {
-            img.addEventListener('click', abrirPopupImagem);
-            img.style.cursor = 'pointer';
+        // Certifique-se de que nenhuma imagem na página index tenha o popup
+        // Isso é redundante, mas garante que não haja pop-up no index
+        const imagensIndex = document.querySelectorAll('img');
+        imagensIndex.forEach(img => {
+            // Removemos qualquer evento de clique que possa ter sido adicionado
+            img.removeEventListener('click', () => {});
+            // Se for uma imagem normal, não deve parecer clicável
+            if (!img.closest('a')) {
+                img.style.cursor = 'default';
+            }
         });
     }
 });
