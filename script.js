@@ -124,4 +124,73 @@ document.addEventListener('DOMContentLoaded', function() {
             menu.classList.remove('scrolled');
         }
     });
+
+    // Funcionalidade de pop-up de imagem
+    // 1. Primeiro, vamos criar o elemento de pop-up e adicioná-lo ao body
+    const popupOverlay = document.createElement('div');
+    popupOverlay.className = 'popup-overlay';
+    popupOverlay.innerHTML = `
+        <div class="popup-container">
+            <img src="" alt="Imagem ampliada" class="popup-image">
+            <button class="popup-close">&times;</button>
+        </div>
+    `;
+    document.body.appendChild(popupOverlay);
+    
+    // 2. Selecionamos os elementos do pop-up para uso posterior
+    const popupImage = document.querySelector('.popup-image');
+    const popupClose = document.querySelector('.popup-close');
+    
+    // 3. Adicionamos funcionalidade para fechar o pop-up
+    popupOverlay.addEventListener('click', function(e) {
+        // Fechar apenas se clicar no fundo ou no botão de fechar
+        if (e.target === popupOverlay || e.target === popupClose) {
+            popupOverlay.classList.remove('active');
+            // Habilitar rolagem da página novamente
+            document.body.style.overflow = 'auto';
+        }
+    });
+    
+    // 4. Funcionalidade para fechar com tecla ESC
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && popupOverlay.classList.contains('active')) {
+            popupOverlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+    });
+    
+    // 5. Encontrar todas as imagens que devem ser clicáveis
+    // Nas páginas de projetos, normalmente estão na galeria
+    const galeriaImagens = document.querySelectorAll('.galeria-item img');
+    // Também podemos adicionar para as imagens dos projetos na home
+    const projetoImagens = document.querySelectorAll('.projeto img');
+    
+    // Função para abrir o popup com a imagem clicada
+    function abrirPopupImagem(e) {
+        // Obter URL da imagem clicada
+        const imagemSrc = e.target.getAttribute('src');
+        // Definir a imagem no popup
+        popupImage.setAttribute('src', imagemSrc);
+        // Mostrar o popup
+        popupOverlay.classList.add('active');
+        // Desabilitar rolagem da página enquanto o popup estiver aberto
+        document.body.style.overflow = 'hidden';
+    }
+    
+    // Adicionar evento de clique para todas as imagens da galeria de projetos
+    galeriaImagens.forEach(img => {
+        img.addEventListener('click', abrirPopupImagem);
+        // Adicionar cursor pointer para indicar que é clicável
+        img.style.cursor = 'pointer';
+    });
+    
+    // Adicionar evento de clique para as imagens de projetos na página inicial
+    projetoImagens.forEach(img => {
+        img.addEventListener('click', function(e) {
+            // Prevenir que o clique na imagem ative o link "Ver mais"
+            e.stopPropagation();
+            abrirPopupImagem(e);
+        });
+        img.style.cursor = 'pointer';
+    });
 });
