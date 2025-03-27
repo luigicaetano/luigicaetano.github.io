@@ -1024,3 +1024,42 @@ footer {
         font-size: 18px;
     }
 }
+
+.before-after-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    height: 400px;
+    overflow: hidden;
+}
+
+.before-after-container img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.before-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.after-image {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    right: 0;
+}
+
+.slider {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    z-index: 2;
+}

@@ -214,4 +214,10 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+    const slider = document.querySelector(".slider");
+    const afterImage = document.querySelector(".after-image");
+    
+    slider.addEventListener("input", function() {
+        afterImage.style.width = `${slider.value}%`;
+    });
 });
